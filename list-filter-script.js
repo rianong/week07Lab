@@ -15,19 +15,19 @@ function makeList() {
 }
 makeList();
 
-function searchProducts() {
+function searchProducts() {    
     var input, filter, ul, li, i, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
     ul = document.getElementsByTagName("ul");
-    li = document.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        li = li[i].getElementsByTagName("li")[0];
+    lis = document.getElementsByTagName("li");
+    for (i = 0; i < lis.length; i++) {
+        li = lis[i];
         txtValue = li.textContent || li.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
+            lis[i].style.display = "";
         } else {
-            li[i].style.display = "none";
+            lis[i].style.display = "none";
         }
     }
 };
